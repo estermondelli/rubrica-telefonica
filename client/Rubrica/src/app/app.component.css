@@ -1,0 +1,22 @@
+button {
+    background-color: rgb(185, 185, 185);
+
+    padding: 4px 6px;
+    margin: 5px;
+
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid gray;
+}
+
+input[type="text"] {
+    background-color: rgb(212, 212, 212);
+    /* color: white; */
+
+    padding: 6px;
+    margin: 0 2px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+}
