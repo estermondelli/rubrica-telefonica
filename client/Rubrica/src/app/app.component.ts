@@ -11,10 +11,9 @@ import { Contatto } from './contatto';
 export class AppComponent {
   contatto: Contatto = new Contatto();
   contatti: Contatto[] = [];
+  count: number = 0;
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   public aggiungi() {
     let oss: Observable<Contatto[]>
@@ -32,11 +31,19 @@ export class AppComponent {
     })
   }
 
-  public mostraContatti() {
+  public mostra() {
     let oss: Observable<Contatto[]>
-      = this.http.get<Contatto[]>("http://localhost:8080/rimuovi");
+      = this.http.get<Contatto[]>("http://localhost:8080/mostra");
     oss.subscribe(risp => {
       this.contatti = risp;
+    })
+  }
+
+  public conta() {
+    let oss: Observable<number>
+      = this.http.get<number>("http://localhost:8080/conta");
+    oss.subscribe(risp => {
+      this.count = risp;
     })
   }
 
