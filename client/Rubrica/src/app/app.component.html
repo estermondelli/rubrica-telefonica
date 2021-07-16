@@ -1,6 +1,10 @@
+<h1>Rubrica</h1>
+<hr>
+<h3>Inserire il contatto</h3>
 <input type="text" placeholder="Inserisci nome..." [(ngModel)]="contatto.nome" />
 <input type="text" placeholder="Inserisci cognome..." [(ngModel)]="contatto.cognome" />
 <input type="text" placeholder="Inserisci numero..." [(ngModel)]="contatto.telefono" />
+<br>
 <br>
 <button (click)="aggiungi()">
     Aggiungi
@@ -12,20 +16,23 @@
     Conta
 </button>
 <p *ngIf="count">Risultati ricerca: {{count}}</p>
-<table>
-    <th>
-        Nome
-    </th>
-    <th>
-        Cognome
-    </th>
-    <th>
-        Numero telefonico
-    </th>
-    <tr *ngFor="let c of contatti">
-        <td>{{c.nome}}</td>
-        <td>{{c.cognome}}</td>
-        <td>{{c.telefono}}</td>
-        <button (click)="rimuovi(c)">X</button>
-    </tr>
-</table>
+<hr>
+<div class="contatto-container">
+    <table>
+        <th>
+            Nome
+        </th>
+        <th>
+            Cognome
+        </th>
+        <th>
+            Numero telefonico
+        </th>
+        <tr *ngFor="let c of contatti">
+            <td>{{c.nome}}</td>
+            <td>{{c.cognome}}</td>
+            <td>{{c.telefono}}</td>
+            <button (click)="rimuovi(c)" id="elimina">Elimina</button>
+        </tr>
+    </table>
+</div>

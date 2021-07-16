@@ -8,6 +8,14 @@ button {
     border: none;
     border-radius: 0;
     border-bottom: 2px solid gray;
+
+    cursor: pointer;
+
+    transition: background-color 200ms ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(161, 161, 161);
 }
 
 input[type="text"] {
@@ -19,4 +27,49 @@ input[type="text"] {
     outline: none;
     border: none;
     border-bottom: 1px solid gray;
+    transition: background-color 200ms ease-in-out;
+}
+
+input[type="text"]:hover, input[type="text"]:focus {
+    background-color: rgb(236, 236, 236);
+}
+
+table {
+    background-color: rgba(0, 0, 0, .15);
+    padding: 10px;
+}
+
+th {
+    padding-bottom: 15px;
+}
+
+tr:nth-child(even) {
+    padding: 0px;
+    background-color: rgb(194, 194, 194);
+    outline: 2px solid gray;
+}
+
+tr:nth-child(odd) {
+    outline: 2px solid gray;
+}
+
+td {
+    margin: 0;
+    padding: 6px;
+    outline: 2px solid gray;
+    
+    transition: background-color 200ms ease-in-out;
+}
+
+td:hover {
+    background-color: rgb(160, 160, 160);
+}
+
+.contatto-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#elimina {
+    font-weight: bold;
 }
