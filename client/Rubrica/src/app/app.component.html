@@ -1,6 +1,6 @@
 <input type="text" placeholder="Inserisci nome..." [(ngModel)]="contatto.nome" />
-<input type="text" placeholder="Inserisci cognome..." />
-<input type="text" placeholder="Inserisci numero..." />
+<input type="text" placeholder="Inserisci cognome..." [(ngModel)]="contatto.cognome" />
+<input type="text" placeholder="Inserisci numero..." [(ngModel)]="contatto.telefono" />
 <br>
 <button (click)="aggiungi()">
     Aggiungi
@@ -11,6 +11,7 @@
 <button (click)="conta()">
     Conta
 </button>
+<p *ngIf="count">Risultati ricerca: {{count}}</p>
 <table>
     <th>
         Nome
@@ -22,6 +23,9 @@
         Numero telefonico
     </th>
     <tr *ngFor="let c of contatti">
-        <button (click)="rimuovi()">X</button>
+        <td>{{c.nome}}</td>
+        <td>{{c.cognome}}</td>
+        <td>{{c.telefono}}</td>
+        <button (click)="rimuovi(c)">X</button>
     </tr>
 </table>

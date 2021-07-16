@@ -11,14 +11,16 @@ import javax.persistence.Id;
 @Entity
 public class Contatto implements Serializable{
 	
-	@Column
-	private String nome;
-	private String cognome;
-	private String numero;
-	
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	@Column
+	private String nome;
+	@Column
+	private String cognome;
+	@Column
+	private String telefono;
 	
 	public String getNome() {
 		return nome;
@@ -32,11 +34,17 @@ public class Contatto implements Serializable{
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public String getNumero() {
-		return numero;
+	public long getId() {
+		return id;
 	}
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 	
 	

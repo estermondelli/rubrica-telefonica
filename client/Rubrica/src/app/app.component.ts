@@ -13,7 +13,13 @@ export class AppComponent {
   contatti: Contatto[] = [];
   count: number = 0;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    let oss: Observable<Contatto[]>
+      = this.http.get<Contatto[]>("http://localhost:8080/mostra");
+    oss.subscribe(risp => {
+      this.contatti = risp;
+    })
+  }
 
   public aggiungi() {
     let oss: Observable<Contatto[]>
@@ -23,9 +29,9 @@ export class AppComponent {
     })
   }
 
-  public rimuovi() {
+  public rimuovi(contatto: Contatto) {
     let oss: Observable<Contatto[]>
-      = this.http.post<Contatto[]>("http://localhost:8080/rimuovi", this.contatto);
+      = this.http.post<Contatto[]>("http://localhost:8080/rimuovi", contatto);
     oss.subscribe(risp => {
       this.contatti = risp;
     })
