@@ -1,4 +1,4 @@
-package it.randstand.rubrica;
+package it.randstand;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
